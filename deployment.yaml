@@ -1,0 +1,31 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: player-scores-app
+spec:
+  replicas: 1  # Adjust the number of replicas as needed
+  selector:
+    matchLabels:
+      app: player-scores-app
+  template:
+    metadata:
+      labels:
+        app: player-scores-app
+    spec:
+      containers:
+      - name: player-scores-app
+        image: whalerider02/hangman-app-mp:latest  # Your Docker image
+        ports:
+        - containerPort: 5200 
+        volumeMounts:
+        - name: player-scores-volume
+          mountPath: /data 
+        volumes:
+        - name: player-scores-volume
+          persistentVolumeClaim:
+            claimName: player-scores-pvc
+          
+        resources:
+          limits:
+            cpu: "200m"   # Limit to 200 millicores of CPU
+            memory: "256Mi" # Limit to 256 MB of memory

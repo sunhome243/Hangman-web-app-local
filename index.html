@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome to the Deadly Hangman Game!</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>The Hangman Game</h1>
+        <div id="startArea"> 
+            <input type="text" id="playerNameInput" placeholder="Enter your name"> 
+            <button id="startButton">Start</button>
+        </div>
+        <div id="gameArea" style="display: none;">
+            <div id="welcomeMessage">Welcome, <span id="playerName"></span>!</div>
+            <div id="wordDisplay"></div>
+            <div id="playerStats">
+                <p>Score: <span id="playerScore">0</span></p>
+                <p>Win Streak: <span id="playerWinStreak">0</span></p>
+            </div>
+            <div id="hangmanContainer">
+                <div id="gallows"></div>
+                <div id="horizontalBeam"></div>
+                <div id="verticalBeam"></div>
+                <div id="hangman">
+                    <div id="head" class="hidden"></div>
+                    <div id="body" class="hidden"></div>
+                    <div id="leftArm" class="hidden"></div>
+                    <div id="rightArm" class="hidden"></div>
+                    <div id="leftLeg" class="hidden"></div>
+                    <div id="rightLeg" class="hidden"></div>
+                    <div id="leftEye" class="hidden"></div>
+                    <div id="rightEye" class="hidden"></div>
+                    <div id="mouth" class="hidden"></div>
+                </div>
+            </div>
+            <div id="inputArea">
+                <input type="text" id="letterInput" maxlength="1">
+                <button id="guessButton">Guess</button>
+            </div>
+            <div id="message"></div>
+            <div id="attempts">Attempts left: <span id="attemptsLeft"></span></div>
+            <div id="triedLetters">Tried letters: <span id="lettersTried"></span></div>
+            <button id="restartButton">Restart</button>
+            <div class="spikes" id="spikes1"></div>
+            <div class="spikes" id="spikes3"></div>
+            <div class="spikes" id="spikes2"></div>
+            <div class="spikes" id="spikes4"></div>
+            <div class="spikes" id="spikes5"></div>
+
+        </div>
+    </div>
+    <script src="script4.js"></script>
+    <div id="fireworks"></div>
+</body>
+</html>

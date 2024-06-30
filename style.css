@@ -1,0 +1,246 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f9f9f9;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.container {
+    text-align: center;
+}
+
+button {
+    background-color: #FFFFFF; /* Default color */
+    color: #000000; /* Default text color */
+    transition: background-color 0.3s ease, color 0.3s ease; /* Smooth transition */
+    padding: 10px 20px;
+    margin-top: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: grey; /* Green */
+    color: white; /* White text color */
+}
+
+/* Define the fireworks animation */
+.firework {
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    background-color: #ff0000;
+    border-radius: 50%;
+    animation: explode 2s ease-out forwards;
+}
+
+@keyframes explode {
+    0% {
+        transform: scale(1);
+        opacity: 1;
+    }
+    100% {
+        transform: scale(5);
+        opacity: 0;
+    }
+}
+
+#hangmanContainer {
+    position: relative;
+    width: 200px;
+    height: 400px;
+    margin: 20px auto;
+}
+
+#gallows {
+    position: absolute;
+    width: 10px; /* Adjust width as needed */
+    height: 400px; /* Adjust height as needed */
+    background-color: black; /* Brown color */
+    left: 50px; /* Adjust left position */
+    top: 0; /* Adjust top position */
+}
+
+#horizontalBeam {
+    position: absolute;
+    width: 80px; /* Adjust width as needed */
+    height: 10px; /* Adjust height as needed */
+    background-color: black; /* Brown color */
+    left: 50px; /* Adjust left position */
+    top: 0px; /* Adjust top position */
+    transform: rotate(180deg); /* Rotate to create a diagonal beam */
+}
+
+#verticalBeam {
+    position: absolute;
+    width: 10px; /* Adjust width as needed */
+    height: 100px; /* Adjust height as needed */
+    background-color: #8B4513; /* Brown color */
+    left: 130px; /* Adjust left position */
+    top: 0; /* Adjust top position */
+}
+
+#inputArea {
+    margin-top: 10px; /* Adjust margin-top to reduce the gap */
+}
+
+.hidden {
+    display: none;
+}
+
+.spikes {
+    position: absolute;
+    width: 0;
+    height: 0;
+    border-left: 8px solid transparent; /* Adjust size as needed */
+    border-right: 8px solid transparent; /* Adjust size as needed */
+    border-bottom: 36px solid lightgray; /* Adjust size and color as needed */
+    transition: border-bottom-color 2s;
+}
+
+#spikes1 {
+    position: absolute;
+    top: calc(50% + 200px); /* Fixed position from the top */
+    left: calc(50% + 0px); /* Fixed position from the left */
+}
+
+#spikes2 {
+    position: absolute;
+    top: calc(50% + 200px); /* Fixed position from the top */
+    left: calc(50% + 20px); /* Fixed position from the left */
+}
+
+#spikes3 {
+    position: absolute;
+    top: calc(50% + 200px); /* Fixed position from the top */
+    left: calc(50% + 40px); /* Fixed position from the left */
+}
+
+#spikes4 {
+    position: absolute;
+    top: calc(50% + 200px); /* Fixed position from the top */
+    left: calc(50% + 80px); /* Fixed position from the left */
+}
+
+#spikes5 {
+    position: absolute;
+    top: calc(50% + 200px); /* Fixed position from the top */
+    left: calc(50% + 60px); /* Fixed position from the left */
+}
+
+
+.gameOver {
+    border-bottom-color: red; /* Change the color of the spikes */
+}
+
+.gameWon {
+    border-bottom-color: green; /* Change the color of the spikes */
+}
+
+.gameReset{
+    border-bottom-color: lightgray; /* Change the color of the spikes */
+}
+
+#hangman {
+    position: absolute;
+    left: 50px;
+    top: 97px;
+}
+
+#head {
+    width: 50px;
+    height: 50px;
+    border: 5px solid black;
+    border-radius: 50%;
+    position: absolute;
+    top: -150px;
+    left: 60px;
+}
+
+#body {
+    width: 10px;
+    height: 100px;
+    background-color: black;
+    position: absolute;
+    top: 155px;
+    left: 80px;
+}
+
+#leftArm, #rightArm {
+    width: 60px;
+    height: 10px;
+    background-color: black;
+    position: absolute;
+    top: 75px;
+}
+
+#leftArm {
+    transform: rotate(45deg);
+    left: 80px;
+}
+
+#rightArm {
+    transform: rotate(-45deg);
+    left: 30px;
+}
+
+#leftLeg, #rightLeg {
+    width: 60px;
+    height: 10px;
+    background-color: black;
+    position: absolute;
+    top: 250px;
+}
+
+#leftLeg {
+    transform: rotate(135deg);
+    left: 40px;
+}
+
+#rightLeg {
+    transform: rotate(-135deg);
+    left: 80px;
+}
+
+#leftEye, #rightEye {
+    width: 10px;
+    height: 10px;
+    background-color: black;
+    position: absolute;
+    top: 20px;
+}
+
+#leftEye {
+    left: 70px;
+}
+
+#rightEye {
+    left: 100px;
+}
+
+#mouth {
+    width: 30px;
+    height: 10px;
+    background-color: black;
+    position: absolute;
+    top: 35px;
+    left: 75px;
+}
+
+#scoreArea {
+    margin-top: 20px;
+    text-align: left; /* Align scores to the left */
+}
+
+#scoreList {
+    list-style: none;
+    padding: 0;
+}
+
+#scoreList li {
+    margin-bottom: 5px;
+}
